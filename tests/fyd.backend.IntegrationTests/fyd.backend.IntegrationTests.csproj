@@ -1,0 +1,19 @@
+﻿<Project Sdk="MSTest.Sdk/4.0.1">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="10.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\fyd.backend.Infraestructura\fyd.backend.Infraestructura.csproj" />
+    <ProjectReference Include="..\..\src\fyd.backend.Aplicacion\fyd.backend.Aplicacion.csproj" />
+  </ItemGroup>
+
+</Project>

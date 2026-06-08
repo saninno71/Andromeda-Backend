@@ -1,0 +1,25 @@
+@dev_host = https://localhost:7227
+
+### 
+POST {{dev_host}}/api/auth/login/
+Accept: application/json
+
+{
+  "email": "tobi2@gmail.com",
+  "password": "Abcd1234!"
+}
+
+### 
+POST {{dev_host}}/api/contabilidad/mayores/odata/CstctbMayores?$filter=NumeraTipoSimbolo eq 'FC.'
+Content-Type: application/json 
+
+{
+  "id": 0,
+  "cuentaID": 0,
+  "empresaID": "",
+  "fechaDesde": 0,
+  "fechaHasta": 0,
+  "arrastraSaldoOK": true,
+  "incluyeImputacionesOK": true,
+  "fechaDesdeInicial": 0
+}

@@ -1,0 +1,22 @@
+<Solution>
+  <Folder Name="/docs/">
+    <File Path="Notas.md" />
+  </Folder>
+  <Folder Name="/Elementos de la solución/">
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/fyd.backend.API/fyd.backend.API.csproj" Id="b1103878-bf7f-4047-8a9d-538ba66705cb" />
+    <Project Path="src/fyd.backend.Aplicacion/fyd.backend.Aplicacion.csproj" Id="902f9460-18d8-43fb-b262-81ee888dd7ec" />
+    <Project Path="src/fyd.backend.Dominio/fyd.backend.Dominio.csproj" />
+    <Project Path="src/fyd.backend.Identidad/fyd.backend.Identidad.csproj" />
+    <Project Path="src/fyd.backend.Infraestructura/fyd.backend.Infraestructura.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/fyd.backend.IntegrationTests/fyd.backend.IntegrationTests.csproj" Id="2f85a2ee-2815-4004-b981-827f020f85f8" />
+    <Project Path="tests/fyd.backend.UnitTests/fyd.backend.UnitTests.csproj" Id="a8028585-cab9-4bea-99e1-5b8a6591ab52" />
+  </Folder>
+</Solution>
