@@ -13,18 +13,20 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG BUILD_CONFIGURATION=Release
 
 #----------------------------------------SAN
-# WORKDIR /src
-# COPY ["src/fyd.backend.API/fyd.backend.API.csproj", "src/fyd.backend.API/"]
-# RUN dotnet restore "./src/fyd.backend.API/fyd.backend.API.csproj"
-# COPY . .
-# WORKDIR "/src/src/fyd.backend.API"
-# RUN dotnet build "./fyd.backend.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
-
 WORKDIR /src
-COPY ["fyd.backend.API.csproj", "./"]
-RUN dotnet restore "fyd.backend.API.csproj"
+COPY ["src/fyd.backend.API/fyd.backend.API.csproj", "src/fyd.backend.API/"]
+RUN dotnet restore "./src/fyd.backend.API/fyd.backend.API.csproj"
 COPY . .
-RUN dotnet build "fyd.backend.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/src/fyd.backend.API"
+RUN dotnet build "./fyd.backend.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+
+#WORKDIR /src
+#COPY ["fyd.backend.API.csproj", "./"]
+#RUN dotnet restore "fyd.backend.API.csproj"
+#COPY . .
+#RUN dotnet build "fyd.backend.API.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
 #----------------------------------------SAN
 
 
@@ -36,8 +38,8 @@ FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
 
 #----------------------------------------SAN
-# RUN dotnet publish "./fyd.backend.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
-RUN dotnet publish "fyd.backend.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./fyd.backend.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+#RUN dotnet publish "fyd.backend.API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 #----------------------------------------SAN
 
 # Esta fase se usa en producción o cuando se ejecuta desde VS en modo normal (valor predeterminado cuando no se usa la configuración de depuración)
