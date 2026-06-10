@@ -63,6 +63,7 @@ using (var scope = app.Services.CreateScope())
     await sincronizador.SincronizarDesdeCodigo();
 }
 
+//SAN
 // if (app.Environment.IsDevelopment())
 // {
     app.UseSwagger();
@@ -71,6 +72,7 @@ using (var scope = app.Services.CreateScope())
 
 app.UseMiddleware<TransaccionMiddleware>();
 
+//SAN
 // app.UseHttpsRedirection();
 
 
@@ -83,5 +85,7 @@ app.UseCors("ReactPolicy");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+app.MapGet("/", () => "Andromeda Backend OK");
 
 app.Run();
