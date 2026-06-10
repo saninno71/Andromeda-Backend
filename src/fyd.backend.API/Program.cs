@@ -71,7 +71,9 @@ using (var scope = app.Services.CreateScope())
 
 app.UseMiddleware<TransaccionMiddleware>();
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
+
+
 
 //INICIO agregado SAN
 app.UseCors("ReactPolicy");
